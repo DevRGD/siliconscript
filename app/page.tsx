@@ -11,7 +11,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main>
+    <main className="bg-bg min-h-screen">
       <Hero />
 
       <div className="max-w-6xl mx-auto px-4">

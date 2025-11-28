@@ -1,6 +1,8 @@
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ThemeProvider from '@/components/ThemeProvider';
+import ThemeScript from '@/components/ThemeScript';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -28,23 +30,23 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        <main className="min-h-screen bg-gray-50">{children}</main>
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <ThemeScript />
+      </head>
+      <body className="antialiased transition-colors duration-300">
+        <ThemeProvider>
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            <main className="grow bg-bg text-text-primary">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

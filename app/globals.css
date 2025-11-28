@@ -1,1 +1,54 @@
 @import 'tailwindcss';
+
+@theme {
+  --font-display: 'Inter', 'sans-serif';
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-hover: var(--hover);
+  --shadow-glow: var(--shadow-glow);
+}
+
+:root {
+  --primary: oklch(55% 0.22 230);
+  --accent: oklch(60% 0.2 220);
+  --bg: oklch(98% 0.01 260);
+  --surface: oklch(100% 0 0);
+  --border: oklch(90% 0.01 260);
+  --text-primary: oklch(10% 0.02 260);
+  --text-secondary: oklch(40% 0.02 260);
+  --hover: oklch(95% 0.01 260);
+  --shadow-glow: 0 0 50px -12px oklch(55% 0.22 230 / 0.2);
+}
+
+[data-theme='dark'] {
+  --primary: oklch(75% 0.25 180);
+  --accent: oklch(80% 0.2 160);
+  --bg: oklch(5% 0.02 260);
+  --surface: oklch(10% 0.02 260);
+  --border: oklch(25% 0.02 260);
+  --text-primary: oklch(98% 0 0);
+  --text-secondary: oklch(65% 0.01 260);
+  --hover: oklch(18% 0.02 260);
+  --shadow-glow: 0 0 60px -15px oklch(75% 0.25 180 / 0.35);
+}
+
+[data-theme='light'] {
+  --primary: oklch(55% 0.22 230);
+  --accent: oklch(60% 0.2 220);
+  --bg: oklch(98% 0.01 260);
+  --surface: oklch(100% 0 0);
+  --border: oklch(90% 0.01 260);
+  --text-primary: oklch(10% 0.02 260);
+  --text-secondary: oklch(40% 0.02 260);
+  --hover: oklch(95% 0.01 260);
+  --shadow-glow: 0 0 50px -12px oklch(55% 0.22 230 / 0.2);
+}
+
+body {
+  @apply bg-bg text-text-primary transition-colors duration-300;
+}
