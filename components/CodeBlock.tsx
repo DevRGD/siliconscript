@@ -20,8 +20,8 @@ export default function CodeBlock({ className, children }: any) {
   };
 
   return (
-    <div className="relative bg-surface rounded-lg overflow-hidden shadow-lg mx-auto my-6 border border-border">
-      <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-primary via-accent to-primary opacity-70" />
+    <div className="relative bg-surface rounded-sm overflow-hidden shadow-lg mx-auto my-6 border border-border">
+      <div className="absolute top-0 left-0 right-0 h-0.75 bg-linear-to-r from-blue-500 via-purple-500 to-pink-500" />
 
       <div className="flex items-center justify-between px-4 py-2.5 bg-bg/50 border-b border-border pt-3">
         <span className="text-xs font-mono text-text-secondary uppercase font-bold tracking-wider">{language}</span>

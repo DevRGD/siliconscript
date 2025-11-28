@@ -19,11 +19,10 @@ export default async function BlogPost({ params }: { params: BlogPostParams }) {
     }
 
     return (
-      <div className="pb-10 flex items-center justify-center min-h-screen bg-bg px-4 sm:px-8 transition-colors duration-300">
-        <div className="w-full max-w-5xl">
-          <div className="prose lg:prose-lg mx-auto text-text-secondary bg-surface border border-border shadow-glow rounded-lg px-4 sm:px-6 lg:px-8 py-6 wrap-break-word">
-            <h1 className="text-4xl font-bold mt-6 mb-4 text-text-primary">{post.title}</h1>
-
+      <div className="pb-20 pt-10 min-h-screen bg-bg transition-colors duration-300">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6">
+          <article className="prose lg:prose-xl mx-auto text-text-secondary wrap-break-word">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-text-primary tracking-tight">{post.title}</h1>
             <MDXRemote
               source={post.content}
               components={mdxComponents}
@@ -33,7 +32,7 @@ export default async function BlogPost({ params }: { params: BlogPostParams }) {
                 },
               }}
             />
-          </div>
+          </article>
         </div>
       </div>
     );
